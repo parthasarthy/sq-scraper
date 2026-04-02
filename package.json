@@ -1,0 +1,16 @@
+{
+  "name": "sq-scraper",
+  "version": "1.0.0",
+  "description": "SQ KrisFlyer Saver seat availability checker — Telegram bot, no AI",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "install-browsers": "npx playwright install chromium --with-deps"
+  },
+  "dependencies": {
+    "node-telegram-bot-api": "^0.66.0",
+    "playwright": "^1.44.0",
+    "dayjs": "^1.11.11",
+    "dotenv": "^16.4.5"
+  }
+}
