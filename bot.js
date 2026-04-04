@@ -119,7 +119,9 @@ bot.onText(/^\/search(.*)$/i, async (msg, match) => {
   activeSearches.add(chatId);
 
   try {
-    const results = await runSearch(query);
+    // Pass telegramNotify so session expiry messages come back to this chat
+    const telegramNotify = (msg) => bot.sendMessage(chatId, msg, { parse_mode: 'Markdown' });
+    const results = await runSearch(query, { telegramNotify });
     const reply   = formatResults(query, results);
 
     // Delete the "searching..." message and send final result
